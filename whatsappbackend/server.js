@@ -20,6 +20,17 @@ mongoose.connect(process.env.CONNECTION_URL, {
 
 app.get('/', (req, res) => res.status(200).send("Hello World")); 
 
+app.get("/messages/sync", (req, res) => {
+  messagesModel.find((err, data) => {
+    if (err) {
+      console.error("Error finding messaages: ", err.message);
+      res.status(500).send(err)
+    } else {
+      res.status(201).send(data)
+    }
+  });
+});
+
 app.post("/messages/new", (req, res) => {
   const dbMessage = req.body;
 
