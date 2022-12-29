@@ -15,8 +15,8 @@ How to run:
   - store your specific pusher-js cluster inside `CLUSTER` variable
   - store your specific pusher-js appid inside `APPID` variable
   - store your specific pusher-js usetls inside `USETLS` variable
-  - store your specific pusher-js pusherID inside `PUSHERID` variable - I used port 9000
-  - store the specific port you will run server on inside `PORT` variable
+  - store your specific pusher-js pusherID inside `PUSHERID` variable 
+  - store the specific port you will run server on inside `PORT` variable - (I used port 9000)
   
   - example:
   ```
