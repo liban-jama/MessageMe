@@ -6,7 +6,7 @@ import AttachFileIcon from '@mui/icons-material/AttachFile';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import MicIcon from '@mui/icons-material/Mic';
-function Chat() {
+function Chat({ messages }) {
   return (
     <div className = "chat">
       <div className = "chat_header">
@@ -31,14 +31,18 @@ function Chat() {
       </div>
 
       <div className = "chat_body">
-          <p className = "chat_message">
-            <span className = "chat_name">Liban</span>
-            This is a message!
-            <span className = "chat_time">
-              {new Date().toUTCString()}
-            </span>
-          </p>
+        {messages.map((message) => (
+           <p className = {`chat_message ${message.received ? "chat_receiver" : ""}`}>
+           
+           <span className = "chat_name">{message.name}</span>
+           {message.message}
+           <span className = "chat_time">
+             {message.timeStamp}
+           </span>
+         </p>
 
+        ))}
+    
           <p className = "chat_message chat_receiver">
             <span className = "chat_name">Liban</span>
             This is a message!

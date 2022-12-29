@@ -4,6 +4,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import messagesModel from "./dbMessages.js";
 import Pusher from 'pusher';
+import cors from 'cors';
 
 const app = express();
 
@@ -18,14 +19,7 @@ const pusher = new Pusher({
 });
 
 app.use(express.json());
-
-app.use((req, res, next) => {
-  
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", "*");
-
-  next();
-});
+app.use(cors());
 
 mongoose.connect(process.env.CONNECTION_URL, {
   useNewUrlParser: true,
@@ -51,6 +45,8 @@ db.once("open", () => {
       pusher.trigger("messages", "inserted", {
          name: messageDetails.name,
          message: messageDetails.message,
+         timeStamp: messageDetails.timeStamp,
+         received: messageDetails.received
       });
     } else {
       console.log("Error triggering Pusher");
@@ -83,6 +79,5 @@ app.post("/messages/new", (req, res) => {
     }
   });
 });
-
 
 app.listen(port, () => console.log(`We are listening at local host:${port}`));
