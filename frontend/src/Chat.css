@@ -23,7 +23,7 @@
 
 .chat_body  {
   flex: 1;
-  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  background-image: url("https://w0.peakpx.com/wallpaper/557/521/HD-wallpaper-whatsapp-v-background-doodle-pattern-patterns-whatsapp.jpg");
   background-repeat: repeat;
   background-position: center;
   padding: 30px;
@@ -52,7 +52,7 @@
 }
 .chat_receiver {
   margin-left:auto;
-  background-color: #dcf8c6;
+  background-color:aliceblue;
 }
 .chat_footer {
   display: flex;

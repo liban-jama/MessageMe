@@ -6,8 +6,8 @@ function SidebarChat() {
     <div className = "sidebarChat">
       <Avatar/>
       <div className = "sidebarChat_info">
-        <h2>Room Name</h2>
-        <p>Last message sent in room</p> 
+        <h2>Room</h2>
+        <p>Last message sent is ...</p> 
 
       </div>
     </div>

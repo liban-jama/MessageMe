@@ -18,15 +18,15 @@ function Chat({ messages }) {
 
     axios.post('/messages/new', {
       "message": input,
-      "name": "Liban Jama",
+      "name": "Erik Jackson",
       "timeStamp": "Just Now",
-      "received": true
+      "received": false
     })
   };
   return (
     <div className = "chat">
       <div className = "chat_header">
-        <Avatar/>
+        <Avatar src = "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"/>
 
         <div className = "chat_headerinfo">
           <h3> Erik Jackson </h3>
