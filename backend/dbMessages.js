@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
-const whatsAppSchema = mongoose.Schema({
+const messageMeSchema = mongoose.Schema({
     message: String,
     name: String,
     timeStamp: String,
     received: Boolean
 });
 
-const messagesModel = mongoose.model('messagecontents', whatsAppSchema);
+const messagesModel = mongoose.model('messagecontents', messageMeSchema);
 
 export default messagesModel
